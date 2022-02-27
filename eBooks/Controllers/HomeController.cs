@@ -17,11 +17,13 @@ namespace eBooks.Controllers
         {
             _logger = logger;
         }
+        
 
         public IActionResult Index()
         {
             return View();
         }
+      
 
         public IActionResult Privacy()
         {
@@ -33,5 +35,8 @@ namespace eBooks.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+
     }
 }
