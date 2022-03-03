@@ -1,0 +1,12 @@
+﻿@using eBooks.Data
+@model PublisherViewModel
+
+<form class="text-secondary" asp-controller="Home" asp-action="SavePublisher">
+    <label asp-for="Logo"></label>
+    <input class="form-control" asp-for="Logo" />
+
+    <label asp-for="Name"></label>
+    <input class="form-control" asp-for="Name" />
+
+    <button class="btn btn-primary">Save</button>
+</form>

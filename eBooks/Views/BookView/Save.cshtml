@@ -1,0 +1,15 @@
+﻿@using eBooks.Data
+@model BookViewModel
+
+<form class="text-secondary" asp-controller="Home" asp-action="SaveBook">
+    <label asp-for="BookPictureURL"></label>
+    <input class="form-control" asp-for="BookPictureURL" />
+
+    <label asp-for="BookName"></label>
+    <input class="form-control" asp-for="BookName" />
+
+    <label asp-for="BookCategory"></label>
+    <input class="form-control" asp-for="BookCategory" />
+
+    <button class="btn btn-primary">Save</button>
+</form>
