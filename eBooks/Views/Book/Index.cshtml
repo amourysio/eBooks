@@ -1,0 +1,36 @@
+﻿@using eBooks.Data
+@model List<Book>
+
+@if (Model == null || Model.Count == 0)
+{
+    <h2 class="text-secondary">No Result!</h2>
+}
+else
+{
+    @foreach (var book in Model)
+    {
+
+        <form class="btn-group">
+            <div class="book-card text-secondary">
+                <div onclick="GetBook('@book.Id')" class="row">
+                    <div class="col-3">
+                        <b>BookPictureURL: @book.BookPictureURL</b>
+                    </div>
+                    <div class="col-3">
+                        <b>BookName: @book.BookName</b>
+                    </div>
+                     <div class="col-3">
+                        <b>Description: @book.Description</b>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr class="alert-danger" />
+    }
+}
+
+<script>
+    const GetBook = (id) => {
+        window.location = `/Home/GetBook/${id}`
+    }
+</script>

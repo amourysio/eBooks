@@ -1,0 +1,33 @@
+﻿@using eBooks.Data
+@model List<Author>
+
+@if (Model == null || Model.Count == 0)
+{
+    <h2 class="text-secondary">No Result!</h2>
+}
+else
+{
+    @foreach (var author in Model)
+    {
+
+        <form class="btn-group">
+            <div class="book-card text-secondary">
+                <div onclick="GetAuthor('@author.Id')" class="row">
+                    <div class="col-3">
+                        <b>ProfilePicture: @author.ProfilePictureURL</b>
+                    </div>
+                    <div class="col-3">
+                        <b>Bio: @author.Bio</b>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr class="alert-danger" />
+    }
+}
+
+<script>
+    const GetAuthor = (id) => {
+        window.location = `/Home/GetAuthor/${id}`
+    }
+</script>

@@ -17,10 +17,11 @@ namespace eBooks.Controllers
 
         public IActionResult Index()
         {
-            var config = new MapperConfiguration(cfg =>
-           cfg.CreateMap<Book, BookViewModel>());
+            // var config = new MapperConfiguration(cfg =>
+            //cfg.CreateMap<Book, BookViewModel>());
 
-            return View(config);
+            // return View(config);
+            return View(this.bookService.GetBook());
         }
 
         public IActionResult GetBook(int id)

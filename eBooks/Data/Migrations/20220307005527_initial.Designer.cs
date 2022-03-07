@@ -10,7 +10,7 @@ using eBooks.Data;
 namespace eBooks.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220303174226_initial")]
+    [Migration("20220307005527_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

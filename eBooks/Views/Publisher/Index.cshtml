@@ -1,0 +1,34 @@
+﻿@using eBooks.Data
+@model List<Publisher>
+
+@if (Model == null || Model.Count == 0)
+{
+    <h2 class="text-secondary">No Result!</h2>
+}
+else
+{
+    @foreach (var pub in Model)
+    {
+
+        <form class="btn-group">
+            <div class="pub-card text-secondary">
+                <div onclick="GetPublisher('@pub.Id')" class="row">
+                    <div class="col-3">
+                        <b>Logo: @pub.Logo</b>
+                    </div>
+                    <div class="col-3">
+                        <b>Name: @pub.Name</b>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr class="alert-danger" />
+
+    }
+}
+
+<script>
+    const GetPublisher = (id) => {
+        window.location = `/Home/GetPublisher/${id}`
+    }
+</script>
